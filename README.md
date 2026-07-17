@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arup Technologies Website
 
-## Getting Started
+Premium four-page marketing website for Arup Technologies, an AI-powered
+digital agency covering websites, marketing, SEO, software, apps, and workflow
+automation.
 
-First, run the development server:
+## Links
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+- Live: https://arpit11-ops.github.io/arup-technologies/
+- Repository: https://github.com/Arpit11-ops/arup-technologies
+- Persistent handoff: [PROJECT_MEMORY.md](PROJECT_MEMORY.md)
+
+## Stack
+
+- Next.js 16 App Router
+- TypeScript
+- Tailwind CSS v4
+- Motion and Lenis
+- pnpm
+- GitHub Pages static export
+
+## Local development
+
+```powershell
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production builds
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Standard local export:
 
-## Learn More
+```powershell
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+GitHub Pages-compatible export:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```powershell
+$env:NEXT_PUBLIC_BASE_PATH='/arup-technologies'
+pnpm build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pushing to `main` triggers `.github/workflows/deploy-pages.yml` and deploys the
+static `out/` directory automatically.
 
-## Deploy on Vercel
+## Important
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Replace `TODO_WHATSAPP_NUMBER` in `lib/utils.ts` before launch promotion.
+- Confirm that `hello@aruptechnologies.com` is active.
+- GitHub Pages has no server runtime. The contact form opens a prefilled email
+  draft; server actions and API routes are not supported by this deployment.
+- Read [PROJECT_MEMORY.md](PROJECT_MEMORY.md) before substantial changes.
