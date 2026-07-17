@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" role="img" aria-label="Illustrative mobile app screen">
+  <defs>
+    <linearGradient id="skybg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A0A0A"/>
+      <stop offset="1" stop-color="#1F1E27"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="800" fill="url(#skybg)"/>
+  <!-- Status bar -->
+  <text x="24" y="36" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="13" font-weight="700">9:41</text>
+  <circle cx="360" cy="30" r="3" fill="#F5F1EB"/>
+  <rect x="330" y="24" width="20" height="12" rx="2" fill="none" stroke="#F5F1EB" stroke-width="1"/>
+  <!-- Header -->
+  <text x="24" y="112" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="14" font-weight="700" opacity="0.6">GOOD MORNING, ARJUN</text>
+  <text x="24" y="156" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="34" font-weight="900" letter-spacing="-1">Today's flow</text>
+  <!-- Card 1 (featured, Ember) -->
+  <rect x="24" y="200" width="352" height="180" rx="18" fill="#EA5B2E"/>
+  <text x="46" y="238" fill="#0A0A0A" font-family="Satoshi, sans-serif" font-size="11" font-weight="700">IN PROGRESS</text>
+  <text x="46" y="286" fill="#0A0A0A" font-family="Satoshi, sans-serif" font-size="26" font-weight="900" letter-spacing="-0.5">Morning intake</text>
+  <text x="46" y="314" fill="#0A0A0A" font-family="Satoshi, sans-serif" font-size="14" font-weight="500" opacity="0.75">3 of 6 items complete</text>
+  <rect x="46" y="336" width="308" height="6" rx="3" fill="#0A0A0A" opacity="0.15"/>
+  <rect x="46" y="336" width="154" height="6" rx="3" fill="#0A0A0A"/>
+  <!-- Card 2 -->
+  <rect x="24" y="400" width="352" height="120" rx="18" fill="#1F1E27" stroke="#F5F1EB" stroke-opacity="0.08"/>
+  <text x="46" y="434" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="11" font-weight="700" opacity="0.55">UP NEXT</text>
+  <text x="46" y="472" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="19" font-weight="700">Ledger reconciliation</text>
+  <text x="46" y="496" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="13" font-weight="500" opacity="0.55">Scheduled for 11:30 IST</text>
+  <!-- Card 3 -->
+  <rect x="24" y="540" width="352" height="120" rx="18" fill="#1F1E27" stroke="#F5F1EB" stroke-opacity="0.08"/>
+  <text x="46" y="574" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="11" font-weight="700" opacity="0.55">SCHEDULED</text>
+  <text x="46" y="612" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="19" font-weight="700">Vendor payout batch</text>
+  <text x="46" y="636" fill="#F5F1EB" font-family="Satoshi, sans-serif" font-size="13" font-weight="500" opacity="0.55">Awaiting approval · 4 items</text>
+  <!-- Tab bar -->
+  <rect x="0" y="720" width="400" height="80" fill="#0A0A0A"/>
+  <circle cx="60" cy="758" r="4" fill="#EA5B2E"/>
+  <circle cx="140" cy="758" r="4" fill="#F5F1EB" opacity="0.4"/>
+  <circle cx="220" cy="758" r="4" fill="#F5F1EB" opacity="0.4"/>
+  <circle cx="300" cy="758" r="4" fill="#F5F1EB" opacity="0.4"/>
+</svg>
