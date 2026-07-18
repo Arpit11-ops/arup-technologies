@@ -18,6 +18,17 @@ when cloned elsewhere.
   sticky scroll-linked desktop stage with directional wipes and a normal-flow
   stacked mobile layout. The dark capability imagery remains the visual anchor.
 - The Kinetic Lightbox redesign is browser-verified but still uncommitted.
+- Home Why uses a cinematic three-card layout with the real Arup beliefs and a
+  supplied looping CloudFront video in the center card. Mobile stacks the cards;
+  reduced motion exposes the underlying static Arup study.
+- The Services hero remains unchanged. Immediately after it, the route now uses
+  a 600svh pinned vertical 3D cylinder on desktop: synchronized service title
+  and progress at left, six supplied video cards at center, and complete service
+  information and CTA at right. Mobile uses six stacked video stories. Only the
+  active film plays; reduced motion falls back to the static service studies.
+- The six 8-second portrait films are stored in `public/videos/services/` with
+  stable service-based filenames. Desktop/mobile browser verification found no
+  console warnings or horizontal overflow.
 - GitHub Pages URL: `https://arpit11-ops.github.io/arup-technologies/`.
 - Repository: `https://github.com/Arpit11-ops/arup-technologies`.
 - Deployment workflow: `.github/workflows/deploy-pages.yml`.

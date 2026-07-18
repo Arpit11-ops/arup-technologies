@@ -1,81 +1,89 @@
-"use client";
-
-import { motion } from "motion/react";
+import Image from "next/image";
 import { BELIEFS } from "@/lib/content";
-import { motionEase, useScrollReveal } from "./motion-primitives";
-import { ScrollSharpenText } from "./scroll-sharpen-text";
+import { MOTION_MEDIA } from "@/lib/media";
+import { assetPath } from "@/lib/utils";
+
+const cardClass =
+  "relative h-[380px] overflow-hidden rounded-2xl border border-bone/12 bg-slate/55 sm:h-[460px]";
 
 export function Why() {
-  const labelReveal = useScrollReveal({ distance: 20 });
-  const lineReveal = useScrollReveal({ delay: 0.08, distance: 0, x: -28, blur: 0 });
-
   return (
-    <section id="why" className="relative bg-bone py-24 lg:py-32">
-      <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
-        <div className="mb-16 flex items-baseline gap-4 lg:mb-24">
-          <motion.span
-            {...labelReveal}
-            className="text-[11px] font-bold uppercase tracking-[0.18em] text-ember"
-          >
-            Why Arup
-          </motion.span>
-          <motion.span
-            {...lineReveal}
-            transition={{ duration: 0.7, ease: motionEase }}
-            className="h-px flex-1 bg-onyx/12"
-          />
-        </div>
+    <section id="why" className="relative w-full scroll-mt-[72px] bg-onyx py-12 text-bone sm:py-20">
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-10">
+        <h2
+          className="mb-12 text-center text-3xl font-normal text-bone sm:mb-24 sm:text-4xl md:text-5xl"
+          style={{ letterSpacing: "-0.04em" }}
+        >
+          Why Arup
+        </h2>
 
-        <div className="flex flex-col gap-14 lg:gap-24">
-          {BELIEFS.map((b, i) => (
-            <BeliefRow
-              key={b.lead}
-              lead={b.lead}
-              body={b.body}
-              index={i}
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-3">
+          <article className={`${cardClass} p-6 sm:p-8`}>
+            <div
+              aria-hidden="true"
+              className="absolute top-1/2 -left-[420px] h-[460px] w-[460px] -translate-y-1/2 rounded-full bg-ember opacity-25 blur-3xl"
             />
-          ))}
+            <div className="relative z-10 flex h-full flex-col">
+              <h3 className="text-xl font-normal leading-tight text-bone sm:text-2xl">
+                One team,
+                <br />
+                not five.
+              </h3>
+              <p className="mt-12 max-w-[280px] text-[13px] font-normal leading-relaxed text-bone/70 sm:mt-20 sm:text-[14px]">
+                {BELIEFS[0].body}
+              </p>
+            </div>
+          </article>
+
+          <article className={`${cardClass} flex flex-col`}>
+            <div className="relative h-[75%] w-full overflow-hidden">
+              <Image
+                src={assetPath("/images/services/ai-automation.webp")}
+                alt=""
+                fill
+                sizes="(min-width: 768px) 33vw, calc(100vw - 32px)"
+                className="object-cover"
+              />
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+                className="relative z-10 block h-full w-full object-cover"
+              >
+                <source src={MOTION_MEDIA.why} type="video/mp4" />
+              </video>
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-b from-transparent to-[#111112]" />
+            </div>
+            <div className="flex flex-1 items-center justify-start p-6 sm:p-8">
+              <h3 className="text-left text-xl font-normal leading-tight text-bone sm:text-2xl">
+                AI where it wins,
+                <br />
+                hands-on where it counts.
+              </h3>
+            </div>
+          </article>
+
+          <article className={`${cardClass} p-6 sm:p-8`}>
+            <div
+              aria-hidden="true"
+              className="absolute -top-28 -right-28 h-56 w-56 rounded-full bg-ember opacity-25 blur-3xl"
+            />
+            <div className="relative z-10 flex h-full flex-col">
+              <h3 className="text-xl font-normal leading-tight text-bone sm:text-2xl">
+                Paid to move
+                <br />
+                numbers.
+              </h3>
+              <p className="mt-auto max-w-[320px] text-[13px] font-normal leading-relaxed text-bone/70 sm:text-[14px]">
+                {BELIEFS[2].body}
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
-  );
-}
-
-function BeliefRow({
-  lead,
-  body,
-  index,
-}: {
-  lead: string;
-  body: string;
-  index: number;
-}) {
-  const numberReveal = useScrollReveal({ delay: 0.02, distance: 22 });
-  const leadReveal = useScrollReveal({ delay: 0.08, distance: 28 });
-  const bodyReveal = useScrollReveal({ delay: 0.16, distance: 28 });
-
-  return (
-    <article className="grid items-start gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-16">
-      <div className="flex items-start gap-6 lg:gap-10">
-        <motion.span
-          {...numberReveal}
-          className="pt-3 font-mono text-[13px] font-bold tabular-nums text-onyx/60"
-        >
-          {String(index + 1).padStart(2, "0")}
-        </motion.span>
-        <motion.h3
-          {...leadReveal}
-          className="text-balance font-black tracking-[-0.03em] text-onyx text-[clamp(1.75rem,3.5vw+0.5rem,3rem)] leading-[1.02]"
-        >
-          {lead}
-        </motion.h3>
-      </div>
-      <motion.div {...bodyReveal} className="lg:pt-4">
-        <ScrollSharpenText
-          text={body}
-          className="text-pretty text-[17px] leading-[1.6] text-onyx"
-        />
-      </motion.div>
-    </article>
   );
 }
