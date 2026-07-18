@@ -14,8 +14,9 @@ when cloned elsewhere.
 - Generated assets: the shared studies in `public/generated/` plus six
   optimized Home Services lightbox studies in `public/images/services/`.
 - Generated imagery is labeled as an Arup capability study, never client work.
-- Home Services now uses the approved Kinetic Lightbox: a sticky scroll-linked
-  desktop stage with directional wipes and a normal-flow stacked mobile layout.
+- Home Services now uses the approved Kinetic Lightbox on a Bone canvas: a
+  sticky scroll-linked desktop stage with directional wipes and a normal-flow
+  stacked mobile layout. The dark capability imagery remains the visual anchor.
 - The Kinetic Lightbox redesign is browser-verified but still uncommitted.
 - GitHub Pages URL: `https://arpit11-ops.github.io/arup-technologies/`.
 - Repository: `https://github.com/Arpit11-ops/arup-technologies`.

@@ -87,14 +87,14 @@ export function Services() {
     <section
       id="services"
       ref={trackRef}
-      className="relative bg-onyx text-bone motion-safe:lg:h-[560vh]"
+      className="relative bg-bone text-onyx motion-safe:lg:h-[560vh]"
     >
-      <div className="system-grid pointer-events-none absolute inset-0 opacity-30" />
+      <div className="system-grid-onyx pointer-events-none absolute inset-0" />
 
       <div className="relative mx-auto max-w-[1600px] px-5 py-24 sm:px-8 lg:sticky lg:top-[72px] lg:flex lg:h-[calc(100svh-72px)] lg:min-h-[600px] lg:flex-col lg:overflow-hidden lg:px-12 lg:py-[clamp(1.5rem,4svh,3.5rem)]">
-        <header className="grid shrink-0 gap-5 border-b border-bone/15 pb-6 lg:grid-cols-[1fr_auto] lg:items-end lg:pb-[clamp(1rem,2.6svh,2rem)]">
+        <header className="grid shrink-0 gap-5 border-b border-onyx/15 pb-6 lg:grid-cols-[1fr_auto] lg:items-end lg:pb-[clamp(1rem,2.6svh,2rem)]">
           <div>
-            <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.16em] text-bone/50">
+            <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.16em] text-ink-muted">
               <span className="h-1.5 w-1.5 bg-ember" />
               Capabilities / 01—06
             </p>
@@ -103,12 +103,12 @@ export function Services() {
             </h2>
           </div>
           <div className="lg:max-w-[29rem] lg:pb-1">
-            <p className="text-[15px] leading-[1.55] text-bone/62">
+            <p className="text-[15px] leading-[1.55] text-ink-muted">
               Six disciplines working as one system—from first impression to the infrastructure underneath it.
             </p>
             <Link
               href="/services"
-              className="group mt-4 inline-flex min-h-11 items-center gap-2 text-[13px] font-bold text-bone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
+              className="group mt-4 inline-flex min-h-11 items-center gap-2 text-[13px] font-bold text-onyx focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
             >
               Explore every capability
               <ArrowUpRight className="h-4 w-4 text-ember transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none" />
@@ -150,7 +150,7 @@ function DesktopLightbox({
   return (
     <div className="hidden min-h-0 flex-1 grid-cols-[minmax(0,0.93fr)_minmax(31rem,1.07fr)] gap-[clamp(2rem,5vw,6rem)] pt-[clamp(1rem,3svh,2.5rem)] lg:grid">
       <div className="relative min-h-0 pl-[clamp(1.2rem,2vw,2rem)] pb-[clamp(1rem,2.5svh,2rem)]">
-        <div className="absolute inset-y-0 left-0 w-px bg-bone/15">
+        <div className="absolute inset-y-0 left-0 w-px bg-onyx/15">
           <motion.span
             aria-hidden="true"
             className="absolute inset-x-0 top-0 origin-top bg-ember"
@@ -197,7 +197,7 @@ function DesktopLightbox({
       </div>
 
       <div className="relative flex min-h-0 flex-col justify-center py-1">
-        <div className="absolute inset-y-0 left-0 w-px bg-bone/12" />
+        <div className="absolute inset-y-0 left-0 w-px bg-onyx/12" />
         <div className="flex min-h-0 flex-col justify-center">
           {SERVICES.map((item, index) => {
             const active = index === activeIndex;
@@ -207,26 +207,26 @@ function DesktopLightbox({
                 type="button"
                 onClick={() => onSelect(index)}
                 aria-current={active ? "step" : undefined}
-                className="group relative grid min-h-0 grid-cols-[2.75rem_1fr_auto] items-center gap-3 border-b border-bone/12 py-[clamp(.42rem,1svh,.85rem)] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ember"
+                className="group relative grid min-h-0 grid-cols-[2.75rem_1fr_auto] items-center gap-3 border-b border-onyx/12 py-[clamp(.42rem,1svh,.85rem)] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ember"
               >
                 <motion.span
                   className="absolute inset-y-0 left-0 w-[3px] origin-center bg-ember"
                   animate={{ scaleY: active ? 1 : 0 }}
                   transition={{ duration: 0.4, ease: motionEase }}
                 />
-                <span className={active ? "text-[11px] font-bold text-ember" : "text-[11px] font-bold text-bone/28"}>
+                <span className={active ? "text-[11px] font-bold text-onyx" : "text-[11px] font-bold text-ink-muted"}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <motion.span
                   animate={{ x: active && animate ? 8 : 0 }}
                   transition={{ duration: 0.5, ease: motionEase }}
                   className={`text-balance text-[clamp(1.55rem,3.15vw,4.7rem)] font-black leading-[0.88] tracking-[-0.05em] transition-colors duration-500 motion-reduce:transition-none ${
-                    active ? "text-bone" : "text-bone/22 group-hover:text-bone/48"
+                    active ? "text-onyx" : "text-onyx/50 group-hover:text-onyx/75"
                   }`}
                 >
                   {item.name}
                 </motion.span>
-                <ArrowUpRight className={`h-4 w-4 transition-opacity duration-300 ${active ? "text-ember opacity-100" : "text-bone opacity-0 group-hover:opacity-45"}`} />
+                <ArrowUpRight className={`h-4 w-4 transition-opacity duration-300 ${active ? "text-ember-deep opacity-100" : "text-onyx opacity-0 group-hover:opacity-50"}`} />
               </button>
             );
           })}
@@ -241,10 +241,10 @@ function DesktopLightbox({
         >
           <span />
           <div className="flex items-center justify-between gap-5">
-            <p className="max-w-[40ch] text-[13px] leading-[1.5] text-bone/56">{service.short}</p>
+            <p className="max-w-[40ch] text-[13px] leading-[1.5] text-ink-muted">{service.short}</p>
             <Link
               href={`/services#${service.slug}`}
-              className="shrink-0 text-[12px] font-bold text-bone underline decoration-ember decoration-1 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
+              className="shrink-0 text-[12px] font-bold text-onyx underline decoration-ember decoration-1 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember"
             >
               View service
             </Link>
@@ -270,10 +270,10 @@ function MobileServiceCard({ index }: { index: number }) {
   const reveal = useScrollReveal({ delay: 0.04, distance: 28, blur: 6 });
 
   return (
-    <motion.article {...reveal} className="border-t border-bone/15 pt-4">
+    <motion.article {...reveal} className="border-t border-onyx/15 pt-4">
       <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.14em]">
         <span className="text-ember">{String(index + 1).padStart(2, "0")}</span>
-        <span className="text-bone/38">Arup capability study</span>
+        <span className="text-ink-muted">Arup capability study</span>
       </div>
       <div className="relative mt-4 aspect-[4/5] overflow-hidden bg-slate">
         <Image
@@ -287,12 +287,12 @@ function MobileServiceCard({ index }: { index: number }) {
       <h3 className="mt-6 text-balance text-[clamp(2.7rem,13vw,5rem)] font-black leading-[0.86] tracking-[-0.05em]">
         {service.name}
       </h3>
-      <div className="mt-5 flex items-end justify-between gap-6 border-t border-bone/12 pt-4">
-        <p className="max-w-[27ch] text-[14px] leading-[1.55] text-bone/58">{service.short}</p>
+      <div className="mt-5 flex items-end justify-between gap-6 border-t border-onyx/12 pt-4">
+        <p className="max-w-[27ch] text-[14px] leading-[1.55] text-ink-muted">{service.short}</p>
         <Link
           href={`/services#${service.slug}`}
           aria-label={`View ${service.name}`}
-          className="grid h-11 w-11 shrink-0 place-items-center bg-ember text-onyx focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bone"
+          className="grid h-11 w-11 shrink-0 place-items-center bg-ember text-onyx focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-onyx"
         >
           <ArrowUpRight className="h-5 w-5" />
         </Link>
