@@ -220,8 +220,8 @@ function DesktopLightbox({
                 <motion.span
                   animate={{ x: active && animate ? 8 : 0 }}
                   transition={{ duration: 0.5, ease: motionEase }}
-                  className={`text-balance text-[clamp(1.55rem,3.15vw,4.7rem)] font-black leading-[0.88] tracking-[-0.05em] transition-colors duration-500 motion-reduce:transition-none ${
-                    active ? "text-onyx" : "text-onyx/50 group-hover:text-onyx/75"
+                  className={`text-balance text-[clamp(1.55rem,3.15vw,4.7rem)] font-black leading-[0.88] tracking-[-0.05em] transition-colors duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+                    active ? "text-ember" : "text-onyx/50 group-hover:text-onyx/75"
                   }`}
                 >
                   {item.name}
