@@ -11,10 +11,12 @@ when cloned elsewhere.
 - Stack: Next.js 16 App Router, TypeScript, Tailwind v4, Motion, Lenis, pnpm.
 - Visual system: Satoshi, Onyx/Bone, Ember Orange, sharp geometry, route-line
   motion, and generated Arup capability studies.
-- Generated assets: `public/generated/hero-systems.png`,
-  `public/generated/capability-wall.png`, and
-  `public/generated/device-system.png`.
+- Generated assets: the shared studies in `public/generated/` plus six
+  optimized Home Services lightbox studies in `public/images/services/`.
 - Generated imagery is labeled as an Arup capability study, never client work.
+- Home Services now uses the approved Kinetic Lightbox: a sticky scroll-linked
+  desktop stage with directional wipes and a normal-flow stacked mobile layout.
+- The Kinetic Lightbox redesign is browser-verified but still uncommitted.
 - GitHub Pages URL: `https://arpit11-ops.github.io/arup-technologies/`.
 - Repository: `https://github.com/Arpit11-ops/arup-technologies`.
 - Deployment workflow: `.github/workflows/deploy-pages.yml`.
@@ -53,4 +55,16 @@ when cloned elsewhere.
   nested cards, bouncing motion, and editorial cream/serif styling.
 - Keep the exact supplied ARUP TECHNOLOGIES logo and self-hosted Satoshi fonts.
 
-Last verified: 2026-07-17.
+## Handoff note (2026-07-18 morning)
+
+The working tree holds uncommitted changes: warmed Bone token (`#f5f1eb`),
+new `components/route-network.tsx` hero animation, hero fold/typography fix,
+and the completed scroll-scrub rebuild of `components/process.tsx`. The process
+section was browser-verified at short desktop and mobile sizes; headline
+clipping and step-opacity ownership were fixed. Why belief copy now uses a
+reversible, AA-safe word scrub, the footer has a low-opacity ARUP watermark
+reveal, service rail panels have desktop Ember traces, and primary WhatsApp
+CTAs have a restrained desktop magnetic pull. The authoritative record and remaining
+animation roadmap live in `..\plans\animation-enhancements.md`.
+
+Last verified: 2026-07-18.

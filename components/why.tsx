@@ -73,7 +73,7 @@ function BeliefRow({
       <motion.div {...bodyReveal} className="lg:pt-4">
         <ScrollSharpenText
           text={body}
-          className="text-pretty text-[17px] leading-[1.6] text-onyx/65"
+          className="text-pretty text-[17px] leading-[1.6] text-onyx"
         />
       </motion.div>
     </article>

@@ -1,16 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { NAV_LINKS } from "@/lib/content";
-import { useScrollReveal } from "./motion-primitives";
-import { motion } from "motion/react";
+import { motionEase, useMotionReady, useScrollReveal } from "./motion-primitives";
+import { motion, useReducedMotion } from "motion/react";
 import { RouteSignal } from "./route-signal";
-import { assetPath } from "@/lib/utils";
 
 export function Footer() {
   const reveal = useScrollReveal({ distance: 24, blur: 4 });
+  const reduced = useReducedMotion();
+  const shouldAnimate = useMotionReady() && !reduced;
 
   return (
     <footer className="relative overflow-hidden bg-onyx pb-8 pt-20 text-bone lg:pt-28">
@@ -47,15 +47,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="relative mt-8 h-[clamp(7rem,20vw,16rem)] overflow-hidden">
-          <Image
-            src={assetPath("/brand/logo.png")}
-            alt=""
-            fill
-            sizes="100vw"
-            className="scale-[1.12] object-cover object-center invert"
-          />
-        </div>
+        <motion.div
+          initial={shouldAnimate ? { opacity: 0, y: 40, clipPath: "inset(100% 0 0 0)" } : false}
+          whileInView={shouldAnimate ? { opacity: 1, y: 0, clipPath: "inset(0% 0 0 0)" } : undefined}
+          viewport={{ once: true, margin: "-5% 0px" }}
+          transition={{ duration: 0.78, ease: motionEase }}
+          className="relative mt-10 overflow-hidden"
+          aria-hidden="true"
+        >
+          <span className="block text-center text-[clamp(7rem,24vw,21rem)] font-black leading-[0.72] tracking-[-0.04em] text-bone/[0.07]">
+            ARUP
+          </span>
+        </motion.div>
 
         <div className="mt-4 flex flex-col justify-between gap-3 border-t border-bone/15 pt-6 text-[12px] text-bone/55 sm:flex-row">
           <span>© {new Date().getFullYear()} Arup Technologies</span>

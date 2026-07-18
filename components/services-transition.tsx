@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { WHATSAPP_HREF } from "@/lib/utils";
 import { MessageCircle } from "lucide-react";
-import { MotionAnchor, useScrollReveal } from "./motion-primitives";
+import { MagneticAnchor, useScrollReveal } from "./motion-primitives";
 
 export function ServicesTransition() {
   const titleReveal = useScrollReveal({ distance: 28 });
@@ -32,7 +32,7 @@ export function ServicesTransition() {
           {...ctaReveal}
           className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
         >
-          <MotionAnchor
+          <MagneticAnchor
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export function ServicesTransition() {
           >
             <MessageCircle className="h-[18px] w-[18px]" strokeWidth={2.5} />
             Ask us anything on WhatsApp
-          </MotionAnchor>
+          </MagneticAnchor>
         </motion.div>
       </div>
     </section>

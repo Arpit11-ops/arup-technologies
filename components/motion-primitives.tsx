@@ -1,13 +1,15 @@
 "use client";
 
 import {
+  animate,
   motion,
   useAnimationControls,
   useInView,
+  useMotionValue,
   useReducedMotion,
   type Variants,
 } from "motion/react";
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, PointerEvent as ReactPointerEvent, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -162,6 +164,60 @@ export function MotionAnchor({ className, ...props }: MotionAnchorProps) {
       tabIndex={0}
       className={cn("will-change-transform", className)}
     />
+  );
+}
+
+function useFinePointer() {
+  const [finePointer, setFinePointer] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 1024px) and (hover: hover) and (pointer: fine)");
+    const update = () => setFinePointer(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return finePointer;
+}
+
+export function MagneticAnchor(props: MotionAnchorProps) {
+  const reduced = useReducedMotion();
+  const ready = useMotionReady();
+  const finePointer = useFinePointer();
+  const shouldAnimate = ready && !reduced && finePointer;
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const handlePointerMove = (event: ReactPointerEvent<HTMLSpanElement>) => {
+    if (!shouldAnimate) return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const pullX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 8;
+    const pullY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 8;
+
+    x.stop();
+    y.stop();
+    x.set(Math.max(-4, Math.min(4, pullX)));
+    y.set(Math.max(-4, Math.min(4, pullY)));
+  };
+
+  const handlePointerLeave = () => {
+    if (!shouldAnimate) return;
+
+    animate(x, 0, { duration: 0.22, ease });
+    animate(y, 0, { duration: 0.22, ease });
+  };
+
+  return (
+    <motion.span
+      style={shouldAnimate ? { x, y } : undefined}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      className="inline-flex w-fit will-change-transform"
+    >
+      <MotionAnchor {...props} />
+    </motion.span>
   );
 }
 
