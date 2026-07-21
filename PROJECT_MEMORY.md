@@ -17,7 +17,7 @@ when cloned elsewhere.
 - Home Services now uses the approved Kinetic Lightbox on a Bone canvas: a
   sticky scroll-linked desktop stage with directional wipes and a normal-flow
   stacked mobile layout. The dark capability imagery remains the visual anchor.
-- The Kinetic Lightbox redesign is browser-verified but still uncommitted.
+- The Kinetic Lightbox redesign is browser-verified and deployed.
 - Home Why uses a cinematic three-card layout with the real Arup beliefs and a
   supplied looping CloudFront video in the center card. Mobile stacks the cards;
   reduced motion exposes the underlying static Arup study.
@@ -29,6 +29,20 @@ when cloned elsewhere.
 - The six 8-second portrait films are stored in `public/videos/services/` with
   stable service-based filenames. Desktop/mobile browser verification found no
   console warnings or horizontal overflow.
+- Navbar updated on 2026-07-19: desktop uses an on-brand Services dropdown,
+  mobile uses an expandable Services group, the WhatsApp CTA follows the Ember
+  pill treatment, and `public/brand/logo-transparent.png` removes the baked-in
+  white logo background.
+- Final Services refinements: rotating cards never use blur; their vertical
+  spacing is viewport-relative so inactive cards do not intersect the active
+  card; the card title sits over a restrained dark header wash. The Ember
+  underline under “team.” in the Services hero was removed while preserving the
+  headline and entrance animation.
+- Deployed baseline commit: `8fa0d41` (`Redesign services with cinematic video
+  carousel`). GitHub Pages workflow run `29635128254` succeeded and the live
+  Services route plus all six MP4 assets were verified publicly.
+- The local development server was stopped on 2026-07-18 at the user's request;
+  port 3000 was confirmed released.
 - GitHub Pages URL: `https://arpit11-ops.github.io/arup-technologies/`.
 - Repository: `https://github.com/Arpit11-ops/arup-technologies`.
 - Deployment workflow: `.github/workflows/deploy-pages.yml`.
@@ -67,16 +81,14 @@ when cloned elsewhere.
   nested cards, bouncing motion, and editorial cream/serif styling.
 - Keep the exact supplied ARUP TECHNOLOGIES logo and self-hosted Satoshi fonts.
 
-## Handoff note (2026-07-18 morning)
+## Handoff note (2026-07-18 final)
 
-The working tree holds uncommitted changes: warmed Bone token (`#f5f1eb`),
-new `components/route-network.tsx` hero animation, hero fold/typography fix,
-and the completed scroll-scrub rebuild of `components/process.tsx`. The process
-section was browser-verified at short desktop and mobile sizes; headline
-clipping and step-opacity ownership were fixed. Why belief copy now uses a
-reversible, AA-safe word scrub, the footer has a low-opacity ARUP watermark
-reveal, service rail panels have desktop Ember traces, and primary WhatsApp
-CTAs have a restrained desktop magnetic pull. The authoritative record and remaining
-animation roadmap live in `..\plans\animation-enhancements.md`.
+The implementation through commit `8fa0d41` is deployed. It includes warmed
+Bone (`#f5f1eb`), the hero route network and fold/typography fixes, the Process
+scroll scrub, reversible Why belief scrub, footer ARUP watermark, restrained
+magnetic WhatsApp CTAs, the cinematic Why cards, and the final Services video
+cylinder. The animation roadmap in `..\plans\animation-enhancements.md` is
+historical context; inspect current code before treating an item as unfinished.
+The local dev server is intentionally stopped.
 
 Last verified: 2026-07-18.
